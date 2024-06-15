@@ -1,11 +1,12 @@
 {
   "name": "easily_jobportol",
   "version": "1.0.0",
+  "type": "module",
   "description": "Job Portal nodejs and expressjs",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "Sanket padole",
   "license": "ISC",
