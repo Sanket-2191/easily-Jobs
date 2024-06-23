@@ -1,24 +1,24 @@
-import allJobs from "./allJobsData.js";
-
-export class Applicant {
+export class Recruiter {
     #password;
-    #appliedJobIds;
     #id;
-    constructor(id, name, email, password, jobIds) {
+    #postedJobIds;
+    constructor(id, name, email, password, postedJobIds) {
         this.#id = id;
         this.name = name;
         this.email = email;
         this.#password = password;
-        this.#appliedJobIds = jobIds;
+        this.#postedJobIds = postedJobIds;
     }
 
-    #addAppliedJobs = (id) => {
-        this.#appliedJobIds.push(...this.#appliedJobIds, id);
+    addPostedJobs = (id) => {
+        this.#postedJobIds.push(...this.#postedJobIds, id);
         return true;
     }
-    getAppliedJobs = () => {
-        return this.#appliedJobIds;
+
+    getPostedJobs = () => {
+        return this.#postedJobIds;
     }
+
     validLoginInfo = (email, password) => {
         console.log("executed validation on:", email, password);
         console.log("executed validation on:", this.email, this.#password);
