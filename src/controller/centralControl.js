@@ -10,8 +10,6 @@ import { Recruiter } from "../model/recruiterStructure.js";
 
 
 
-session.loggedIn = false;
-
 const sendMail = (data) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -48,14 +46,14 @@ export const jobsPage = (req, res) => {
     if (req.body && req.body.roleReq) {
         const roleReq = req.body.roleReq.toLowerCase(); // Get roleReq from request body
         const filtered = jobs.filter(job => job.role.toLowerCase().indexOf(roleReq) !== -1);
-        return res.render('jobs.ejs', { jobs: filtered, loggedIn });
+        return res.render('jobs.ejs', { jobs: filtered, loggedIn: req.session.loggedIn });
     }
     console.log("allJobs Rendering");
-    res.render('jobs.ejs', { jobs, loggedIn: session.loggedIn })
+    res.render('jobs.ejs', { jobs, loggedIn: req.session.loggedIn })
 }
 
 export const signupPage = (req, res) => {
-    return res.render('signup', { loggedIn: session.loggedIn, errors: null });
+    return res.render('signup', { loggedIn: req.session.loggedIn, errors: null });
 }
 
 export const handleSignup = (req, res) => {
@@ -104,11 +102,12 @@ export const handleSignup = (req, res) => {
 }
 
 export const loginPage = (req, res) => {
-    res.render('login', { loggedIn: session.loggedIn, msg: null })
+    res.render('login', { loggedIn: req.session.loggedIn, msg: null })
 }
 
 export const handleLogin = (req, res) => {
     const { isRecruiter, email, password, userType } = req.body;
+
 
     let isAuth = false;
     if (isRecruiter) {
@@ -122,8 +121,9 @@ export const handleLogin = (req, res) => {
     }
 
     if (isAuth) {
-        session.loggedIn = true;
-        session.isRecruiter = isRecruiter;
+        req.session.loggedIn = true;
+        req.session.isRecruiter = isRecruiter;
+        req.session.userid = email;
 
         if (isRecruiter) {
             const id = req.body.recruiterId;
@@ -131,14 +131,15 @@ export const handleLogin = (req, res) => {
             const postedJobIds = recruiter.getPostedJobs();
             const jobs = [];
             postedJobIds.forEach(id => jobs.push(AllJobs.getJob(id)));
-            res.render('postedJobs', { recruiter, id, jobs, loggedIn: session.loggedIn });
+            res.render('postedJobs', { recruiter, id, jobs, loggedIn: req.session.loggedIn, userId: req.session.userId });
         }
         else {
             const jobs = AllJobs.getAllJobs();
-            res.render('jobs', { jobs, loggedIn: session.loggedIn })
+            res.render('jobs', { jobs, loggedIn: req.session.loggedIn, userId: req.session.userId })
         }
 
     } else {
-        res.render('login', { loggedIn, msg: "Unable to Login check your Credentials..", success: false })
+        res.render('login', { loggedIn: req.session.loggedIn, msg: "Unable to Login check your Credentials..", success: false, userId: null })
     }
 }
+

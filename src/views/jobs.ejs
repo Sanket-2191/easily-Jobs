@@ -20,7 +20,7 @@
             <div class="h-[32%]">
               <div>Location: <%= job.location %></div>
               <div>Salary: <%= job.salary %></div>
-              <div>Applicants: <%= job.applicants.length %></div>
+              <div>Applicants: <%= job.getTotalApplicants() %></div>
             </div>
             <div class="h-[10%]">
               <button

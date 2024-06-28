@@ -1,0 +1,25 @@
+1. Set up an Express.js application and its related configurations.
+
+2. Install necessary project dependencies based on the functionalities required.
+
+3. Configure EJS as the templating engine and create views for job seekers to browse all jobs, 
+    view details of a job, apply to jobs, and recruiters to create, update, delete, and view their job postings.
+    
+4. Create a User model with functions for getting all the users, adding a user, and confirming user login.
+
+5. Create a User controller to interface with the User model and handle user registration, login, and logout.
+
+6. Create a Job model with functions for creating a new job, retrieving all jobs, finding a job by its id, 
+    updating a job, adding a new applicant to a job, retrieving all applicants for a job, and deleting a job.
+    
+7. Create a Job controller to interface with the Job model to create, update and delete jobs, and to manage job applicants.
+
+8. Implement routes for user registration, login, logout, job operations including creating, 
+    updating, and deleting job postings, and to fetch necessary views.
+    
+9. Implement a session based user authentication and management system for recruiters.
+
+10. Set up middleware to handle resume uploads using Multer, send confirmation emails after applying 
+    for a job using Nodemailer, and to track a user's last visit using cookies.
+    
+11. Document the application explaining functionalities,

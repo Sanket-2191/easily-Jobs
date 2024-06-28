@@ -2,6 +2,7 @@ export class Recruiter {
     #password;
     #id;
     #postedJobIds;
+
     constructor(id, name, email, password, postedJobIds) {
         this.#id = id;
         this.name = name;
@@ -11,7 +12,7 @@ export class Recruiter {
     }
 
     addPostedJobs = (id) => {
-        this.#postedJobIds.push(...this.#postedJobIds, id);
+        this.#postedJobIds.push(id);
         return true;
     }
 

@@ -1,5 +1,5 @@
 <div class="relative w-full">
-    <div class="relative isolate z-0 bg-white px-6 pt-14 lg:px-8">
+    <div class="relative  isolate z-0 bg-white px-6 pt-14 lg:px-8 ">
       <div class="relative mx-auto max-w-2xl py-24">
         <div class="absolute inset-x-0 -top-[4rem] -z-10 transform-gpu overflow-hidden blur-3xl md:-top-[10rem]">
           <svg
@@ -38,12 +38,14 @@
             >
              <a href="/jobs"> View Trending Jobs</a>
             </button>
-            <button
-              type="button"
-              class="rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-            >
-             <a href="/recruiterLogin"> Recruiters Login</a>
+            <% if(!loggedIn){%> 
+              <button
+                type="button"
+                class="rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+              >
+              <a href="/login"> Login</a>
             </button>
+            <%} %>
           </div>
         </div>
       </div>

@@ -1,11 +1,10 @@
-<div class="flex flex-wrap justify-between align-middle p-3 m-5">
+<div class="flex flex-wrap justify-start align-middle p-3 m-5">
 
-    <% recruiter.getPostedJobs(id).forEach(job=>{%>
-        <div class="w-[300px] rounded-md border my-3">
+    <% jobs.forEach(job=>{%>
+        <div class="w-[300px] rounded-md border my-3 mr-3">
             <div class="p-4">
               <h1 class="inline-flex items-center text-lg font-semibold">
                 <%= job.role %> opportunity.
-               
               </h1>
               <div class="mt-4 flex flex-wrap">
                 <% job.requirements.forEach(requ=>{%>
@@ -22,9 +21,16 @@
                 class="mt-4 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold
                  text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 
                  focus-visible:outline-offset-2 focus-visible:outline-black"
-                
               >
-               <a href='/applicants'> Applicants: <%= job.applicants.length %></a>
+               <a href='/applicants/<%= job.id %>'> Applicants: <%= job.getTotalApplicants() %></a>
+              </button>
+              <button
+                  type="button"
+                  class="mt-4 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold
+                  text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 
+                  focus-visible:outline-offset-2 focus-visible:outline-black"
+              >
+                  <a href='/edit/<%= job.id %>' class="text-white"> Edit</a>
               </button>
             </div>
           </div>

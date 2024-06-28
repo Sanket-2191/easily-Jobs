@@ -1,25 +1,22 @@
+
 class Job {
-    constructor(requirements, role, salary, applicants, location) {
+    #applicantIds;
+    constructor(id, requirements, role, salary, applicants, location, company) {
+        this.id = id;
         this.requirements = requirements;
         this.role = role;
         this.salary = salary;
-        this.applicants = applicants;
+        this.#applicantIds = applicants;
         this.location = location;
+        this.company = company;
     }
 
-    getApplicants = () => this.applicants.length;
+    getTotalApplicants = () => this.#applicantIds.length;
 
-    getApplicantsDetail = () => {
-        // go to applicants data and get all the applicants 
-        // by comparing their id with the index number of current applicant.
-        const applicantsOfJob = [];
+    getAllApplicants = () => this.#applicantIds;
 
-        return applicantsOfJob;
-    }
-
-    getRequirements = () => {
-        return this.requirements;
-    }
+    getRequirements = () => this.requirements;
 }
+
 
 export default Job;

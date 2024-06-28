@@ -1,0 +1,23 @@
+<div>
+    <h1>Edit Job</h1>
+    <form action="/edit/<%= job.id %>" method="POST">
+        <div>
+            <label for="role">Role:</label>
+            <input type="text" id="role" name="role" value="<%= job.role %>">
+        </div>
+        <div>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" value="<%= job.location %>">
+        </div>
+        <div>
+            <label for="salary">Salary:</label>
+            <input type="text" id="salary" name="salary" value="<%= job.salary %>">
+        </div>
+        <div>
+            <label for="requirements">Requirements (comma separated):</label>
+            <input type="text" id="requirements" name="requirements" value="<%= job.requirements.join(', ') %>">
+        </div>
+        <button type="submit">Update Job</button>
+    </form>
+    <a href="/jobs">Back to Jobs</a>
+</div>

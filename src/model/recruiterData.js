@@ -1,3 +1,5 @@
+import { Recruiter } from "./recruiterStructure.js";
+
 export class AllRecruiters {
 
     static #recruiters = [];
@@ -25,3 +27,6 @@ export class AllRecruiters {
         return false;
     }
 }
+
+const recruiter = new Recruiter(0, "Rohit Chavhan", "rohit@gmail.com", "rohit123", [2, 3]);
+AllRecruiters.addNewRecruiter(recruiter);
