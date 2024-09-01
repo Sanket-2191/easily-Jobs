@@ -97,7 +97,7 @@ export const handleSignup = (req, res) => {
 
         sendMail({ textMsg, email, name, subject });
     }
-    res.render('login', { loggedIn: true, msg: `Recruiter Signup as ${name} is successful.` })
+    res.render('login', { loggedIn: true, msg: `Recruiter Signup as ${name} is successful.`, success: true })
 
 }
 
@@ -107,7 +107,6 @@ export const loginPage = (req, res) => {
 
 export const handleLogin = (req, res) => {
     const { isRecruiter, email, password, userType } = req.body;
-
 
     let isAuth = false;
     if (isRecruiter) {
@@ -143,3 +142,4 @@ export const handleLogin = (req, res) => {
     }
 }
 
+// [1, 2, 3, 4].forEach(NUM => console.log(NUM);)/

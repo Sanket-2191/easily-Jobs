@@ -21,8 +21,8 @@ export class Recruiter {
     }
 
     validLoginInfo = (email, password) => {
-        console.log("executed validation on:", email, password);
-        console.log("executed validation on:", this.email, this.#password);
+        // console.log("executed validation on:", email, password);
+        // console.log("executed validation on:", this.email, this.#password);
         return this.email === email && this.#password === password;
     }
 }

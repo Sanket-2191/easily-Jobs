@@ -1,10 +1,15 @@
 <section>
     <div class="flex flex-col items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
       <% if(msg){ %>
-        <div class="animate__animated rounded-md border-l-4 border-green-500 bg-green-100 p-4 w-[80%] animate__bounceIn">
+        <div class="animate__animated rounded-md border-l-4 <%if(success){%>
+          border-green-500 bg-green-100
+          <%}else{%>
+            border-red-500 bg-red-100
+            <%}%> p-4 w-[80%] animate__bounceIn">
           <div class="flex items-center justify-start space-x-4">
             <div>
-              <svg
+              <%if(success){%>
+                <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -19,6 +24,25 @@
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
               </svg>
+                <%}else{%>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-6 w-6 text-red-600"
+                  >
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                  <%}%>
+              
             </div>
             <div>
               <p class="text-sm font-medium text-green-600">
