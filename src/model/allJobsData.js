@@ -13,11 +13,12 @@ class AllJobs {
     }
     static addNewJob = (job) => {
         this.#jobs.push(job);
+        this.totalJobCount++;
         return true;
     }
 
     static getJob = (id) => {
-        return this.#jobs[id];
+        return this.#jobs.find(j => j.id == id);
     }
 
 }

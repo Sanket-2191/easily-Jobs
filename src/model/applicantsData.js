@@ -20,25 +20,34 @@ export class AllApplicants {
         //     return false;
         // }
 
-        this.#applicants.push(...this.#applicants, applicant);
+        this.#applicants.push(applicant);
 
         this.emailsRegistered[applicant.email] = true;
         return true;
     }
 
     static validateApplicant = ({ email, password }) => {
-        this.#applicants.forEach(app => {
-            if (app.email === email && app.password === password) {
-                return true;
-            }
-        })
+        console.log("resieved applicant for verif:", { email, password });
 
-        return false;
+        const applicant = this.getApplicant(email);
+        console.log(applicant);
+
+
+        return applicant.validLoginInfo(email, password);
     }
 
-    // can make finding the applicant easier by assigning an id........
+    // can make finding the applicant easier by assigning an id........ 
     static getApplicant = (email) => {
-        return this.#applicants.find(app => app.email === email);
+        console.log("In applicant data model getapplicant recieved email/id:", email);
+
+        const applicant = this.#applicants.find(app => {
+            console.log("In applicant data model getapplicant:", { email: app.email, id: app.getId() });
+
+            return app.email === email || app.getId() === email
+        });
+        console.log("In applicant data model getapplicant applicant found?:", applicant);
+
+        return applicant;
     }
 }
 
@@ -61,3 +70,5 @@ AllApplicants.addNewApplicant(user2);
 AllApplicants.addNewApplicant(user3);
 AllApplicants.addNewApplicant(user4);
 AllApplicants.addNewApplicant(user5);
+
+// console.log(AllApplicants.getAllApplicants());

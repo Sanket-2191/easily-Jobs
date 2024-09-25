@@ -1,12 +1,18 @@
 import { Recruiter } from "./recruiterStructure.js";
 
 export class AllRecruiters {
-
     static #recruiters = [];
+
+    constructor() {
+    }
+
+    static getAllRecruiters = () => this.#recruiters
 
     static getTotalRecruiters = () => this.#recruiters.length;
 
     static addNewRecruiter = (recruiter) => {
+        console.log("Added new recruiter:", recruiter);
+
         this.#recruiters.push(recruiter);
         return true;
     }
@@ -30,3 +36,6 @@ export class AllRecruiters {
 
 const recruiter = new Recruiter(0, "Rohit Chavhan", "rohit@gmail.com", "rohit123", [2, 3]);
 AllRecruiters.addNewRecruiter(recruiter);
+
+
+AllRecruiters.getAllRecruiters();

@@ -1,5 +1,7 @@
 <section>
     <div class="flex flex-col items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+
+      <!-- Toast Element for Status of signup -->
       <div id="errorMsg" class="w-full flex flex-col items-center  ">
         <% if(errors){ %>
           <% errors.map(err => { %>
@@ -54,6 +56,7 @@
         </p>
         <form action="/signup" method="post" class="mt-8">
           <div class="space-y-5">
+            <!-- Name for Signup -->
             <div>
               <label for="name" class="text-base font-medium text-gray-900">
                 
@@ -69,6 +72,7 @@
                 />
               </div>
             </div>
+            <!-- Email-id for Signup -->
             <div>
               <label for="email" class="text-base font-medium text-gray-900">
                 
@@ -84,6 +88,7 @@
                 />
               </div>
             </div>
+            <!-- Password for Signup -->
             <div>
               <div class="flex items-center justify-between">
                 <label for="password" class="text-base font-medium text-gray-900">
@@ -101,13 +106,16 @@
                 />
               </div>
             </div>
+            <!-- Select User type -->
             <div class="flex items-center justify-start my-1">
-                <input type="radio" name="userType" id="jobSeeker" value="jobSeeker"> <label for="jobSeeker" class="mx-2"> Looking for a JOB</label>
+                <input type="radio" name="userType" id="jobSeeker" value="jobSeeker">
+                 <label for="jobSeeker" class="mx-2"> Looking for a JOB</label>
             </div>
             <div class="flex items-center justify-start my-1">
-                <input type="radio" name="userType" id="recruiter" value="recruiter"> <label for="recruiter" class="mx-2"> I am a RECRUITER</label>
+                <input type="radio" name="userType" id="recruiter" value="recruiter"> 
+                <label for="recruiter" class="mx-2"> I am a RECRUITER</label>
             </div>
-            
+            <!-- Submit Singup Info button -->
             <div>
               <button
                 type="submit"

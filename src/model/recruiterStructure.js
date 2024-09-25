@@ -3,10 +3,11 @@ export class Recruiter {
     #id;
     #postedJobIds;
 
-    constructor(id, name, email, password, postedJobIds) {
+    constructor(id, name, email, password, postedJobIds, phone) {
         this.#id = id;
         this.name = name;
         this.email = email;
+        this.phone = phone;
         this.#password = password;
         this.#postedJobIds = postedJobIds;
     }

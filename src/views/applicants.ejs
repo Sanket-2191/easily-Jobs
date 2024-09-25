@@ -1,0 +1,43 @@
+
+
+
+<div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs  bg-gray-700 text-gray-400">
+            <th scope="col" class="px-6 py-3 rounded-s-lg">
+                Name
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Email
+            </th>
+            <th scope="col" class="px-6 py-3 rounded-e-lg">
+                <button class="btn btn-ghost btn-xs">Resume</button>
+           
+        </thead>
+        <tbody>
+            
+                <% applicants.forEach(a => { %> 
+                    <tr class=" bg-gray-800 text-gray-400">
+                        <th scope="col" class="px-6 py-3 rounded-s-lg">
+                            <%= a.name %>
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            <%= a.email %>
+                        </th>
+                        <th scope="col" class="px-6 py-3 rounded-e-lg">
+                            <button class="btn btn-ghost btn-xs">View Resume</button>
+                        </th>
+                    </tr>
+                    
+                <% }) %> 
+           
+        </tbody>
+        <tfoot>
+            <tr class="font-semibold text-gray-900 dark:text-white">
+                <th scope="row" class="px-6 py-3 text-base">Name</th>
+                <td class="px-6 py-3">Email</td>
+                <td class="px-6 py-3">Resume</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

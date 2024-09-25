@@ -6,12 +6,13 @@
     <title>Easily-Job portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="stylesheets/main.css" type="text/css">
+    <script src="https://kit.fontawesome.com/13cf9d3174.js" crossorigin="anonymous"></script>
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 </head>
-<body class="m-0 h-[100%]">
+<body class="m-0 h-[100%] bg-slate-500">
         
         <nav class="z-50 top-0 fixed w-full h-[10%]">
             <div class="relative w-full bg-gray-500 flex flex-col items-stretch justify-between">
@@ -91,7 +92,36 @@
                         <a href="/login">Log In</a>
                         </button>
                     </div>
-                <%} %>
+                <%} else{%>
+                  <div class="hidden space-x-2 lg:block">
+                    <%if(recruiter){%> 
+                      <button
+                        type="button"
+                        class="rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-black hover:bg-black/10 
+                        focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                        >
+                        <a href="/postedJobs">Posted Jobs</a>
+                      </button>
+                    <%}%>
+                    <button
+                    type="button"
+                    class="rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-black hover:bg-black/10 
+                    focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                    >
+                    <%= userId %>
+                    </button>
+                    <button
+                    type="button"
+                    class="rounded-md border border-black px-3 py-2 text-sm font-semibold
+                     text-black shadow-sm focus-visible:outline focus-visible:outline-2 
+                     focus-visible:outline-offset-2 focus-visible:outline-black
+                     hover:bg-black hover:text-white"
+                    >
+                    <a href="/logout">Log out</a>
+                    </button>
+                </div>
+                  
+                  <%}%>
                 <div class="lg:hidden ">
                   <svg
                   onclick="navBarToggle('#navbarToggle')"
@@ -188,8 +218,8 @@
                 <%}%>
               </div>
             </div>
-          </nav>
-        <main class="min-h-[90vh] h-fit relative p-3 top-5">
+        </nav>
+        <main class="min-h-[90vh] h-fit relative p-3 top-[10%]">
             <%- body %>
         </main>
  

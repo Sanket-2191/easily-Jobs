@@ -1,3 +1,28 @@
 #navbarToggle{
     transition: all 0.3s cubic-bezier();
 }
+
+.btn {
+    @apply mt-4 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold
+           text-white shadow-sm;
+  }
+  
+  .btn:hover {
+    @apply bg-black/80;
+  }
+  
+  .btn:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-black;
+  }
+
+
+.loginBtn{
+    @apply rounded-md border border-black px-3 py-2 text-sm font-semibold
+    text-black shadow-sm;
+}
+.loginBtn:hover{
+    @apply bg-black text-white;
+}
+.loginBtn:focus-visible{
+ @apply outline outline-2 outline-offset-2 outline-black;
+}

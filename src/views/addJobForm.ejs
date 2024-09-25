@@ -1,0 +1,43 @@
+<form action="/addJob" method="post" class="m-2 ">
+
+    <div>
+        <label for="role" class="block mb-2 text-sm font-medium text-gray-900">Role </label>
+        <input type="text" id="role" name="role"
+        class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs
+        focus:ring-blue-500 focus:border-blue-500">
+    </div>
+    <div>
+        <label for="requirements" class="block mb-2 text-sm font-medium text-gray-900">Requirements (Seperated with ',') </label>
+        <input type="text" id="requirements" name="requirements"
+        class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs
+        focus:ring-blue-500 focus:border-blue-500">
+    </div>
+    <div>
+        <label for="location" class="block mb-2 text-sm font-medium text-gray-900">Location </label>
+        <input type="text" id="location" name="location"
+        class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs
+        focus:ring-blue-500 focus:border-blue-500">
+    </div>
+    <div>
+            <label for="companyName" class="block mb-2 text-sm font-medium text-gray-900">Company Name </label>
+            <input type="text" id="companyName" name="companyName"
+            class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs
+            focus:ring-blue-500 focus:border-blue-500">
+        
+    </div>
+        <label for="salary" class="block mb-2 text-sm font-medium text-gray-900">Salary </label>
+        <input type="text" id="salary" name="salary"
+        class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs
+        focus:ring-blue-500 focus:border-blue-500">
+    </div> 
+
+    <button
+        type="submit"
+        class="mt-4 w-full rounded-sm bg-black px-2 py-1.5 text-sm font-semibold
+        text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 
+        focus-visible:outline-offset-2 focus-visible:outline-black"
+    >
+        Add new Job
+    </button>
+
+</form>
